@@ -3,11 +3,12 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'marionette',
   'views/home/HomeView',
   'views/projects/ProjectsView',
   'views/contributors/ContributorsView',
   'views/footer/FooterView'
-], function($, _, Backbone, HomeView, ProjectsView, ContributorsView, FooterView) {
+], function($, _, Backbone, Marionette, HomeView, ProjectsView, ContributorsView, FooterView) {
   
   var AppRouter = Backbone.Router.extend({
     routes: {

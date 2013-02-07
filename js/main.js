@@ -8,15 +8,30 @@ require.config({
     jquery: 'libs/jquery/jquery-min',
     underscore: 'libs/underscore/underscore-min',
     backbone: 'libs/backbone/backbone-min',
+    marionette: 'libs/marionette/marionette-min',
     templates: '../templates'
+  },
+  shim : {
+    jquery : {
+      exports : 'jQuery'
+    },
+    underscore : {
+      exports : '_'
+    },
+    backbone : {
+      deps : ['jquery', 'underscore'],
+      exports : 'Backbone'
+    },
+    marionette : {
+      deps : ['jquery', 'underscore', 'backbone'],
+      exports : 'Marionette'
+    }
   }
-
 });
-
 require([
   // Load our app module and pass it to our definition function
   'app',
-
+  
 ], function(App){
   // The "app" dependency is passed in as "App"
   // Again, the other dependencies passed in are not "AMD" therefore don't pass a parameter to this function
